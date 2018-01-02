@@ -1,8 +1,12 @@
 package alcgas.studio.com.gas_alc;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.DialogTitle;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,9 +16,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    Button BtnAVSG, BtnQntRoda, BtnRegister;
+    final Context c = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +31,50 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        BtnAVSG = (Button) findViewById(R.id.BtnAVSG);
+        BtnQntRoda = (Button) findViewById(R.id.BtnQntRoda);
+        BtnRegister = (Button) findViewById(R.id.BtnRegister);
+
+        BtnAVSG.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                final Dialog gasAlcDialog = new Dialog(c);
+                gasAlcDialog.setContentView(R.layout.gasalc_dialog);
+                gasAlcDialog.setTitle("alcool ou gasolina?");
+
+                Button BtnComparar = (Button) gasAlcDialog.findViewById(R.id.BtnComparar);
+                BtnComparar.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View arg0) {
+                        EditText edtGas, edtAlc;
+                        edtGas = (EditText) gasAlcDialog.findViewById(R.id.edtGas);
+                        edtAlc = (EditText) gasAlcDialog.findViewById(R.id.edtAlc);
+                        double alcool = Double.parseDouble(edtAlc.getText().toString());
+                        double gasolina = Double.parseDouble(edtGas.getText().toString());
+                        String resp = "";
+                        if(alcool/gasolina > 0.7){
+                            resp = "eh melhor ir de gasolina, cara";
+                        }else if (alcool/gasolina == 0.7)   {
+                            resp = "vai na fe";
+                        }else{
+                            resp = "acredito que a melhor opcao seja utilizar alcool desta vez, senhor(a)";
+                        }
+                            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(c);
+                            alertDialogBuilder.setTitle("Resposta");
+                            alertDialogBuilder.setMessage(resp);
+                            AlertDialog aDial = alertDialogBuilder.create();
+                            aDial.show();
+                    }
+                });
+
+
+                gasAlcDialog.show();
+
+            }
+        });
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

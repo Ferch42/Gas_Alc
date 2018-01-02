@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Digite os valores para descobrir qual opcao eh melhor:"
+       android:textSize="15dp"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="20dp"
+       />
+
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:inputType="numberDecimal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:hint="R$ Gasolina"
+        android:id="@+id/edtGas"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:inputType="numberDecimal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:hint="R$ Alcool"
+        android:id="@+id/edtAlc"
+        />
+    <Button
+        android:id="@+id/BtnComparar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comparar"
+        android:layout_marginTop="150dp"
+        android:layout_centerHorizontal="true"
+
+
+        />
+
+</RelativeLayout>
