@@ -12,8 +12,36 @@
     tools:context="alcgas.studio.com.gas_alc.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:src="@drawable/posto"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alcool vs gasolina"
+        android:id="@+id/BtnAVSG"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quanto roda?"
+        android:id="@+id/BtnQntRoda"
+        android:layout_marginTop="60dp"
+        android:layout_alignTop="@+id/BtnAVSG"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Histórico"
+        android:id="@+id/BtnRegister"
+        android:layout_marginTop="60dp"
+        android:layout_alignTop="@+id/BtnQntRoda"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
