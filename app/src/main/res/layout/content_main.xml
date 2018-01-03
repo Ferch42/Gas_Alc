@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/posto"
         android:layout_centerHorizontal="true"
-        android:id="@+id/imageView2" />
+        android:id="@+id/logonoob" />
 
     <Button
         android:layout_width="wrap_content"

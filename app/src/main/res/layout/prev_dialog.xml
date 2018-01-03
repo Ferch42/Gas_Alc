@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Quantos quilometros vc ira rodar: "
+        android:id="@+id/textQuilometros"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+       />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/textKm"
+        android:layout_below="@+id/textQuilometros"
+        android:layout_centerHorizontal="true"
+       />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Seu carro ira rodar ate a quilometragem: "
+        android:id="@+id/textResposta"
+        android:layout_below="@+id/textKm"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/textResp"
+        android:layout_below="@+id/textResposta"
+        android:layout_centerHorizontal="true"
+        />
+
+</RelativeLayout>

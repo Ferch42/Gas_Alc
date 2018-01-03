@@ -2,6 +2,7 @@ package alcgas.studio.com.gas_alc;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -22,7 +23,7 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    Button BtnAVSG, BtnQntRoda, BtnRegister;
+    private Button BtnAVSG, BtnQntRoda, BtnRegister;
     final Context c = this;
 
     @Override
@@ -74,14 +75,11 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
-
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        BtnQntRoda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent i = new Intent(c, prevActivity.class);
+                startActivity(i);
             }
         });
 
